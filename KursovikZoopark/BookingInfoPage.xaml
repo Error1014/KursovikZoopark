@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KursovikZoopark"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="BookingInfoPage">
 
     <Grid Background="White">
@@ -18,20 +18,16 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Название" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Height="48" Width="158"/>
 
-        <TextBlock Grid.Row="2" Text="2000 руб." HorizontalAlignment="Left" Margin="595,0,0,0" FontSize="36" Width="155"/>
-        <TextBlock Grid.Row="2" Text="до 10 человек" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="36" Width="234"/>
+        <TextBlock Grid.Row="2" Text="2000 руб." HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="26" Width="155"/>
+        <TextBlock Grid.Row="2" Text="до 10 человек" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="26" Width="234"/>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="71*"/>
-                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="97*"/>
+                <ColumnDefinition Width="103*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0"  Text="Длительность" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="36" Width="227">
-                <TextBlock.Background>
-                    <ImageBrush/>
-                </TextBlock.Background>
-            </TextBlock>
-            <TextBlock Grid.Column="1" Text="45 минут" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="36" Width="188"/>
+            <TextBlock Grid.Column="0"  Text="Длительность" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="26" Width="227"/>
+            <TextBlock Grid.Column="1" Text="45 минут" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="26" Width="188"/>
         </Grid>
-        <Button Grid.Row="4" Background="#FF6EBE2D" Content="Бронировать" Margin="250,10,250,10" FontSize="30" FontWeight="Bold"/>
+        <Button Grid.Row="4" Background="#FF6EBE2D" Width="200" Content="Бронировать" Margin="0,10,0,10" FontSize="20" FontWeight="Bold" Click="BookingEx"/>
     </Grid>
 </Page>

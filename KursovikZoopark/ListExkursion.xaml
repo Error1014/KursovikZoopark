@@ -9,7 +9,7 @@
       Title="ListExkursion">
 
     <Grid Background="White" Loaded="Grid_Loaded">
-        <DataGrid x:Name="listEx" MouseDoubleClick="listEx_MouseDoubleClick" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="listEx" IsReadOnly="True" MouseDoubleClick="SelectEx" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="100"/>
                 <DataGridTextColumn Header="Цена"  Binding="{Binding price}" Width="100"/>

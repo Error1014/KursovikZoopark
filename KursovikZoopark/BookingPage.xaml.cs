@@ -16,21 +16,23 @@ using System.Windows.Shapes;
 namespace KursovikZoopark
 {
     /// <summary>
-    /// Логика взаимодействия для BookingInfoPage.xaml
+    /// Логика взаимодействия для BookingPage.xaml
     /// </summary>
-    public partial class BookingInfoPage : Page
+    public partial class BookingPage : Page
     {
-        private Exkursion selectEx;
-        public BookingInfoPage(Exkursion Ex)
+        public BookingPage(Exkursion Ex)
         {
             InitializeComponent();
-            selectEx = Ex;
+            dataPicker.DisplayDateStart = DateTime.Now;
+            for (int i = 9; i < 20; i++)
+            {
+                HourComboBox.ItemsSource = i.ToString();
+            }
         }
 
         private void BookingEx(object sender, RoutedEventArgs e)
         {
-            MainWindow MW = (MainWindow)Window.GetWindow(this);
-            MW.MainFrame.Content = new BookingPage(selectEx);
+
         }
     }
 }

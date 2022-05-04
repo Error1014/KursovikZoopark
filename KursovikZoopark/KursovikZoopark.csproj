@@ -94,6 +94,9 @@
     <Compile Include="BookingInfoPage.xaml.cs">
       <DependentUpon>BookingInfoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BookingPage.xaml.cs">
+      <DependentUpon>BookingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Exkursion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="BookingInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BookingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
