@@ -9,6 +9,29 @@
       Title="BookingInfoPage">
 
     <Grid Background="White">
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="66*"/>
+            <RowDefinition Height="160*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Название" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" Height="48" Width="158"/>
+
+        <TextBlock Grid.Row="2" Text="2000 руб." HorizontalAlignment="Left" Margin="595,0,0,0" FontSize="36" Width="155"/>
+        <TextBlock Grid.Row="2" Text="до 10 человек" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="36" Width="234"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="71*"/>
+                <ColumnDefinition Width="129*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"  Text="Длительность" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="36" Width="227">
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock Grid.Column="1" Text="45 минут" HorizontalAlignment="Left" Margin="10,0,0,0" FontSize="36" Width="188"/>
+        </Grid>
+        <Button Grid.Row="4" Background="#FF6EBE2D" Content="Бронировать" Margin="250,10,250,10" FontSize="30" FontWeight="Bold"/>
     </Grid>
 </Page>
