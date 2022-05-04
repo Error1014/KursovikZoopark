@@ -20,9 +20,12 @@ namespace KursovikZoopark
     /// </summary>
     public partial class BookingPage : Page
     {
+        private Exkursion selectEx;
+        private float itog = 0;
         public BookingPage(Exkursion Ex)
         {
             InitializeComponent();
+            selectEx = Ex;
             dataPicker.DisplayDateStart = DateTime.Now;
             for (int i = 1; i < Ex.maxMan + 1; i++)
             {
@@ -41,6 +44,20 @@ namespace KursovikZoopark
         private void BookingEx(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ValueManComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            double price = (from E in App.Context.Exkursion.ToList()
+                            where E.id == selectEx.id
+                            select E.price).Max(x => x.Value);
+            double sale = (from E in App.Context.Exkursion.ToList()
+                           where E.id == selectEx.id
+                           select E.skidka).Max(x => x.Value);
+            sale /= 100;
+            itog = (float)(price * int.Parse(ValueManComboBox.SelectedValue.ToString()));
+            itog = (float)(itog - itog * sale);
+            ItogTextBlock.Text = itog.ToString();
         }
     }
 }
