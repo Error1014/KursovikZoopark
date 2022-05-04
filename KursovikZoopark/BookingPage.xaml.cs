@@ -24,9 +24,17 @@ namespace KursovikZoopark
         {
             InitializeComponent();
             dataPicker.DisplayDateStart = DateTime.Now;
-            for (int i = 9; i < 20; i++)
+            for (int i = 1; i < Ex.maxMan + 1; i++)
             {
-                HourComboBox.ItemsSource = i.ToString();
+               ValueManComboBox.Items.Add(i);
+            }
+            for (int i = 9; i < 20 + 1; i++)
+            {
+                HourComboBox.Items.Add(i);
+            }
+            for (int i = 0; i < 50 + 1; i += 10)
+            {
+                MinutComboBox.Items.Add(i);
             }
         }
 
