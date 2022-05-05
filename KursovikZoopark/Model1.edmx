@@ -166,7 +166,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KursovikZooparkEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KursovikZooparkEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Booking" EntityType="Self.Booking" />
           <EntitySet Name="Exkursion" EntityType="Self.Exkursion" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
@@ -185,7 +185,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище KursovikZooparkModelContainer" CdmEntityContainer="KursovikZooparkEntities1">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KursovikZooparkModelContainer" CdmEntityContainer="KursovikZooparkEntities">
           <EntitySetMapping Name="Booking">
             <EntityTypeMapping TypeName="KursovikZooparkModel.Booking">
               <MappingFragment StoreEntitySet="Booking">

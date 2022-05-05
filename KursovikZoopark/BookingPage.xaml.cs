@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,22 @@ namespace KursovikZoopark
 
         private void BookingEx(object sender, RoutedEventArgs e)
         {
-
+            Booking booking = new Booking();
+            //booking.Exkursion = selectEx;
+            booking.idExkursion = selectEx.id;
+            booking.idUser = 1;
+            booking.valueMan = int.Parse(ValueManComboBox.SelectedItem.ToString());
+            int _hour = int.Parse(HourComboBox.SelectedItem.ToString());
+            int _minut = int.Parse(MinutComboBox.SelectedItem.ToString());
+            DateTime date = new DateTime();
+            date = new DateTime(dataPicker.SelectedDate.Value.Year, dataPicker.SelectedDate.Value.Month, dataPicker.SelectedDate.Value.Day, _hour, _minut,0);
+            booking.dateTime = date;
+            booking.itog = itog;
+            App.Context.Booking.Add(booking);
+            App.Context.SaveChanges();
+            MessageBox.Show("Бронирование прошло успешно");
+            MainWindow MW = (MainWindow)Window.GetWindow(this);
+            MW.MainFrame.Content = new ListExkursion();
         }
 
         private void ValueManComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

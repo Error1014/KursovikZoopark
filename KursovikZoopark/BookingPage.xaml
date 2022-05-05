@@ -39,10 +39,19 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3">
             <ComboBox x:Name="ValueManComboBox" Width=" 100" Margin="10,0,10,0" SelectionChanged="ValueManComboBox_SelectionChanged" />
-            <TextBlock Text="Итого:" Width="72" FontSize="20" VerticalAlignment="Center" Margin="300,0,0,0"/>
+            <TextBlock Text="Итого:" Width="72" FontSize="20" VerticalAlignment="Center" Margin="300,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.593"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
             <TextBlock x:Name="ItogTextBlock" HorizontalAlignment="Center" Text="2000" Width="100" FontSize="20" VerticalAlignment="Center"/>
         </StackPanel>
-        <Button Template="{StaticResource btTemplate}" Grid.Row="4" Width="300" Content="Бронировать" Margin="0,10,0,10" FontSize="25" BorderThickness="1,1,0,1" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="2" FontWeight="Bold" Foreground="Black" BorderBrush="#00000000">
+        <Button Template="{StaticResource btTemplate}" Grid.Row="4" Width="300" Height="45" Content="Бронировать" FontSize="25" BorderThickness="1,1,0,1" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="2" FontWeight="Bold" Foreground="Black" BorderBrush="#00000000" Click="BookingEx">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFBDFF69" Offset="0.3"/>

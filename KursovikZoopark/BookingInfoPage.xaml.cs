@@ -25,6 +25,10 @@ namespace KursovikZoopark
         {
             InitializeComponent();
             selectEx = Ex;
+            nameExTaxtBlock.Text = Ex.name;
+            priceTextBlock.Text = Ex.price.ToString();
+            maxManTextBlock.Text = Ex.maxMan.ToString();
+            durationTextBlock.Text = Ex.duration.ToString();
         }
 
         private void BookingEx(object sender, RoutedEventArgs e)
