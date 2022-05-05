@@ -13,10 +13,10 @@ namespace KursovikZoopark
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KursovikZooparkEntities : DbContext
+    public partial class KursovikZooparkEntities1 : DbContext
     {
-        public KursovikZooparkEntities()
-            : base("name=KursovikZooparkEntities")
+        public KursovikZooparkEntities1()
+            : base("name=KursovikZooparkEntities1")
         {
         }
     
