@@ -8,7 +8,21 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="600"
       Title="BookingPage">
-
+    <Page.Resources>
+        <ControlTemplate TargetType="Button" x:Key="btTemplate">
+            <Border CornerRadius="20"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{TemplateBinding Background}"
+                    Height="{TemplateBinding Height}"
+                    Width="{TemplateBinding Width}" >
+                <ContentControl Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding Content}" />
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="66*"/>
@@ -28,6 +42,15 @@
             <TextBlock Text="Итого:" Width="72" FontSize="20" VerticalAlignment="Center" Margin="300,0,0,0"/>
             <TextBlock x:Name="ItogTextBlock" HorizontalAlignment="Center" Text="2000" Width="100" FontSize="20" VerticalAlignment="Center"/>
         </StackPanel>
-        <Button Grid.Row="4" Background="#FF6EBE2D" Width="300" Content="Бронировать" Margin="0,10,0,10" FontSize="20" FontWeight="Bold"/>
+        <Button Template="{StaticResource btTemplate}" Grid.Row="4" Width="300" Content="Бронировать" Margin="0,10,0,10" FontSize="25" BorderThickness="1,1,0,1" RenderTransformOrigin="0.5,0.5" Panel.ZIndex="2" FontWeight="Bold" Foreground="Black" BorderBrush="#00000000">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFBDFF69" Offset="0.3"/>
+                    <GradientStop Color="#FF8CC248" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            
+        </Button>
+
     </Grid>
 </Page>
