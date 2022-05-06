@@ -24,5 +24,24 @@ namespace KursovikZoopark
         {
             InitializeComponent();
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            var result = from B in App.Context.Booking.ToList()
+                         from E in App.Context.Exkursion.ToList()
+                         where B.idExkursion == E.id
+                         select new {E.name,B.itog,B.valueMan, B.dateTime };
+            listEx.DataContext = result;
+        }
+
+        private void SelectEx(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void listEx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
