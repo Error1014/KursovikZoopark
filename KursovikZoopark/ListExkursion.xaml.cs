@@ -35,8 +35,8 @@ namespace KursovikZoopark
         private void SelectEx(object sender, MouseButtonEventArgs e)
         {
             Exkursion SelectEx = (listEx.SelectedItem as Exkursion);
-            MainWindow MW = (MainWindow)Window.GetWindow(this);
-            MW.MainFrame.Content = new BookingInfoPage(SelectEx);
+            ClientWin CW = (ClientWin)Window.GetWindow(this);
+            CW.MainFrame.Content = new BookingInfoPage(SelectEx);
         }
     }
 }

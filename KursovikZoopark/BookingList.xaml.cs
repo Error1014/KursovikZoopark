@@ -16,27 +16,13 @@ using System.Windows.Shapes;
 namespace KursovikZoopark
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для BookingList.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BookingList : Page
     {
-        public MainWindow()
+        public BookingList()
         {
             InitializeComponent();
-            
-        }
-
-        private void NavClient(object sender, RoutedEventArgs e)
-        {
-            ClientWin CW = new ClientWin();
-            this.Close();
-            CW.Show();
-        }
-        private void NavStaff(object sender, RoutedEventArgs e)
-        {
-            AdminWin AW = new AdminWin();
-            this.Close();
-            AW.Show();
         }
     }
 }

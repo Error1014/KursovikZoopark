@@ -33,7 +33,7 @@ namespace KursovikZoopark
 
         private void BookingEx(object sender, RoutedEventArgs e)
         {
-            MainWindow MW = (MainWindow)Window.GetWindow(this);
+            ClientWin MW = (ClientWin)Window.GetWindow(this);
             MW.MainFrame.Content = new BookingPage(selectEx);
         }
     }

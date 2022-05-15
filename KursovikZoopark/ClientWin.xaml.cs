@@ -10,33 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KursovikZoopark
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ClientWin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClientWin : Window
     {
-        public MainWindow()
+        public ClientWin()
         {
             InitializeComponent();
-            
+            MainFrame.Content = new ListExkursion();
         }
-
-        private void NavClient(object sender, RoutedEventArgs e)
+        private void NavListExkursion(object sender, RoutedEventArgs e)
         {
-            ClientWin CW = new ClientWin();
-            this.Close();
-            CW.Show();
+            MainFrame.Content = new ListExkursion();
         }
-        private void NavStaff(object sender, RoutedEventArgs e)
+        private void NavHistory(object sender, RoutedEventArgs e)
         {
-            AdminWin AW = new AdminWin();
-            this.Close();
-            AW.Show();
+            MainFrame.Content = new MyHistory();
         }
     }
 }

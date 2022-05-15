@@ -58,8 +58,8 @@ namespace KursovikZoopark
             App.Context.Booking.Add(booking);
             App.Context.SaveChanges();
             MessageBox.Show("Бронирование прошло успешно");
-            MainWindow MW = (MainWindow)Window.GetWindow(this);
-            MW.MainFrame.Content = new ListExkursion();
+            ClientWin CW = (ClientWin)Window.GetWindow(this);
+            CW.MainFrame.Content = new ListExkursion();
         }
 
         private void ValueManComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
