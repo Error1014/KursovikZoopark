@@ -30,5 +30,6 @@ namespace KursovikZoopark
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Booking { get; set; }
+        public virtual Role Role1 { get; set; }
     }
 }
