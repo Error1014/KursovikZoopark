@@ -20,6 +20,7 @@ namespace KursovikZoopark
         public Nullable<int> valueMan { get; set; }
         public Nullable<System.DateTime> dateTime { get; set; }
         public Nullable<double> itog { get; set; }
+        public Nullable<bool> isEnd { get; set; }
     
         public virtual Exkursion Exkursion { get; set; }
         public virtual User User { get; set; }

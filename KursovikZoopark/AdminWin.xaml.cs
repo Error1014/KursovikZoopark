@@ -22,6 +22,7 @@ namespace KursovikZoopark
         public AdminWin()
         {
             InitializeComponent();
+            MainFrame.Content = new BookingList();
         }
 
         private void NavBookingPageAdmin(object sender, RoutedEventArgs e)

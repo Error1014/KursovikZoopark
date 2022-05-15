@@ -15,6 +15,7 @@
           <Property Name="valueMan" Type="int" />
           <Property Name="dateTime" Type="datetime" />
           <Property Name="itog" Type="float" />
+          <Property Name="isEnd" Type="bit" />
         </EntityType>
         <EntityType Name="Exkursion">
           <Key>
@@ -103,6 +104,7 @@
           <Property Name="valueMan" Type="Int32" />
           <Property Name="dateTime" Type="DateTime" Precision="3" />
           <Property Name="itog" Type="Double" />
+          <Property Name="isEnd" Type="Boolean" />
           <NavigationProperty Name="Exkursion" Relationship="Self.FK_Booking_Exkursion" FromRole="Booking" ToRole="Exkursion" />
           <NavigationProperty Name="User" Relationship="Self.FK_Booking_User" FromRole="Booking" ToRole="User" />
         </EntityType>
@@ -195,6 +197,7 @@
                 <ScalarProperty Name="valueMan" ColumnName="valueMan" />
                 <ScalarProperty Name="dateTime" ColumnName="dateTime" />
                 <ScalarProperty Name="itog" ColumnName="itog" />
+                <ScalarProperty Name="isEnd" ColumnName="isEnd" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
