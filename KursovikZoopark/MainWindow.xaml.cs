@@ -34,14 +34,26 @@ namespace KursovikZoopark
                 {
                     if (PassBox.Password==item.password)
                     {
-                        
+                        if (item.role==1)
+                        {
+                            ClientWin CW = new ClientWin(item);
+                            this.Close();
+                            CW.Show();
+                        }
+                        else if(item.role == 2)
+                        {
+                            AdminWin AW = new AdminWin();
+                            this.Close();
+                            AW.Show();
+                        }
+                        break;
                     }
                 }
             }
         }
         private void NavClient(object sender, RoutedEventArgs e)
         {
-            ClientWin CW = new ClientWin();
+            ClientWin CW = new ClientWin(null);
             this.Close();
             CW.Show();
         }

@@ -19,18 +19,27 @@ namespace KursovikZoopark
     /// </summary>
     public partial class ClientWin : Window
     {
-        public ClientWin()
+        User _client;
+        public ClientWin(User client)
         {
             InitializeComponent();
-            MainFrame.Content = new ListExkursion();
+            _client = client;
+            MainFrame.Content = new ListExkursion(_client);
         }
         private void NavListExkursion(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new ListExkursion();
+            MainFrame.Content = new ListExkursion(_client);
         }
         private void NavHistory(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new MyHistory();
+            MainFrame.Content = new MyHistory(_client);
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            Window MW = (MainWindow)Window.GetWindow(this);
+            this.Close();
+            MW.Show();
         }
     }
 }

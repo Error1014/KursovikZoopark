@@ -34,5 +34,12 @@ namespace KursovikZoopark
         {
 
         }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow MW = new MainWindow();
+            this.Close();
+            MW.Show();
+        }
     }
 }

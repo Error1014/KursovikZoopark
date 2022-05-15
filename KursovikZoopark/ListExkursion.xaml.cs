@@ -20,9 +20,11 @@ namespace KursovikZoopark
     /// </summary>
     public partial class ListExkursion : Page
     {
-        public ListExkursion()
+        User _client;
+        public ListExkursion(User client)
         {
             InitializeComponent();
+            _client = client;
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -36,7 +38,7 @@ namespace KursovikZoopark
         {
             Exkursion SelectEx = (listEx.SelectedItem as Exkursion);
             ClientWin CW = (ClientWin)Window.GetWindow(this);
-            CW.MainFrame.Content = new BookingInfoPage(SelectEx);
+            CW.MainFrame.Content = new BookingInfoPage(SelectEx, _client);
         }
     }
 }

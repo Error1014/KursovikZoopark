@@ -20,17 +20,20 @@ namespace KursovikZoopark
     /// </summary>
     public partial class MyHistory : Page
     {
-        public MyHistory()
+        User _client;
+        public MyHistory(User client)
         {
             InitializeComponent();
+            _client = client;
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            var result = from B in App.Context.Booking.ToList()
-                         from E in App.Context.Exkursion.ToList()
-                         where B.idExkursion == E.id
-                         select new {E.name,B.itog,B.valueMan, B.dateTime };
+            var result = from E in App.Context.Exkursion.ToList()
+                         join B in App.Context.Booking on E.id equals B.idExkursion
+                         //join U in App.Context.User on B.idUser equals U.id
+                         where B.idUser == _client.id
+                         select new {E.name,B.itog,B.valueMan, B.dateTime};
             listEx.DataContext = result;
         }
 

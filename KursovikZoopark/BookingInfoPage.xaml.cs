@@ -21,9 +21,11 @@ namespace KursovikZoopark
     public partial class BookingInfoPage : Page
     {
         private Exkursion selectEx;
-        public BookingInfoPage(Exkursion Ex)
+        User _client;
+        public BookingInfoPage(Exkursion Ex, User client)
         {
             InitializeComponent();
+            _client = client;
             selectEx = Ex;
             nameExTaxtBlock.Text = Ex.name;
             priceTextBlock.Text = Ex.price.ToString();
@@ -34,7 +36,7 @@ namespace KursovikZoopark
         private void BookingEx(object sender, RoutedEventArgs e)
         {
             ClientWin MW = (ClientWin)Window.GetWindow(this);
-            MW.MainFrame.Content = new BookingPage(selectEx);
+            MW.MainFrame.Content = new BookingPage(selectEx, _client);
         }
     }
 }

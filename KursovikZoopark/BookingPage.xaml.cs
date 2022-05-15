@@ -22,10 +22,12 @@ namespace KursovikZoopark
     public partial class BookingPage : Page
     {
         private Exkursion selectEx;
+        User _client;
         private float itog = 0;
-        public BookingPage(Exkursion Ex)
+        public BookingPage(Exkursion Ex, User client)
         {
             InitializeComponent();
+            _client = client;
             selectEx = Ex;
             dataPicker.DisplayDateStart = DateTime.Now;
             for (int i = 1; i < Ex.maxMan + 1; i++)
@@ -47,7 +49,7 @@ namespace KursovikZoopark
             Booking booking = new Booking();
             //booking.Exkursion = selectEx;
             booking.idExkursion = selectEx.id;
-            booking.idUser = 1;
+            booking.idUser = _client.id;
             booking.valueMan = int.Parse(ValueManComboBox.SelectedItem.ToString());
             int _hour = int.Parse(HourComboBox.SelectedItem.ToString());
             int _minut = int.Parse(MinutComboBox.SelectedItem.ToString());
@@ -59,7 +61,7 @@ namespace KursovikZoopark
             App.Context.SaveChanges();
             MessageBox.Show("Бронирование прошло успешно");
             ClientWin CW = (ClientWin)Window.GetWindow(this);
-            CW.MainFrame.Content = new ListExkursion();
+            CW.MainFrame.Content = new ListExkursion(_client);
         }
 
         private void ValueManComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
