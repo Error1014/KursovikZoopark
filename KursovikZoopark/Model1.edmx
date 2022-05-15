@@ -30,6 +30,13 @@
           <Property Name="isLike" Type="bit" />
           <Property Name="skidka" Type="float" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -50,6 +57,7 @@
           <Property Name="login" Type="varchar" MaxLength="50" />
           <Property Name="password" Type="varchar" MaxLength="50" />
           <Property Name="dateBirdth" Type="date" />
+          <Property Name="role" Type="int" />
         </EntityType>
         <Association Name="FK_Booking_Exkursion">
           <End Role="Exkursion" Type="Self.Exkursion" Multiplicity="0..1" />
@@ -78,6 +86,7 @@
         <EntityContainer Name="Хранилище KursovikZooparkModelContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Exkursion" EntityType="Self.Exkursion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Booking_Exkursion" Association="Self.FK_Booking_Exkursion">
@@ -122,6 +131,13 @@
           <Property Name="skidka" Type="Double" />
           <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_Exkursion" FromRole="Exkursion" ToRole="Booking" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -142,6 +158,7 @@
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dateBirdth" Type="DateTime" Precision="0" />
+          <Property Name="role" Type="Int32" />
           <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_User" FromRole="User" ToRole="Booking" />
         </EntityType>
         <Association Name="FK_Booking_Exkursion">
@@ -171,6 +188,7 @@
         <EntityContainer Name="KursovikZooparkEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Booking" EntityType="Self.Booking" />
           <EntitySet Name="Exkursion" EntityType="Self.Exkursion" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Booking_Exkursion" Association="Self.FK_Booking_Exkursion">
@@ -215,6 +233,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="KursovikZooparkModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="role1" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="KursovikZooparkModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -235,6 +261,7 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="dateBirdth" ColumnName="dateBirdth" />
+                <ScalarProperty Name="role" ColumnName="role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

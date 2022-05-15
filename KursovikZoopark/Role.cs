@@ -12,23 +12,9 @@ namespace KursovikZoopark
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Role
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
-        {
-            this.Booking = new HashSet<Booking>();
-        }
-    
         public int id { get; set; }
-        public string name { get; set; }
-        public string familia { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public Nullable<System.DateTime> dateBirdth { get; set; }
-        public Nullable<int> role { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Booking { get; set; }
+        public string role1 { get; set; }
     }
 }

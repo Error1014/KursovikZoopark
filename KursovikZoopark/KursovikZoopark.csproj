@@ -130,6 +130,9 @@
     <Compile Include="MyHistory.xaml.cs">
       <DependentUpon>MyHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -26,6 +26,19 @@ namespace KursovikZoopark
             
         }
 
+        private void Whod(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in App.Context.User.ToList())
+            {
+                if (loginBox.Text == item.login)
+                {
+                    if (PassBox.Password==item.password)
+                    {
+                        
+                    }
+                }
+            }
+        }
         private void NavClient(object sender, RoutedEventArgs e)
         {
             ClientWin CW = new ClientWin();
