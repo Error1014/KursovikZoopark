@@ -32,7 +32,7 @@ namespace KursovikZoopark
         }
         private void NavHistory(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new MyHistory(_client);
+            ..MainFrame.Content = new MyHistory(_client);
         }
 
         private void Exit(object sender, RoutedEventArgs e)
