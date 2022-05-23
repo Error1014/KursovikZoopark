@@ -34,7 +34,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="role" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -151,7 +151,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="role1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
@@ -215,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KursovikZooparkEntitiesq" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KursovikZooparkEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Booking" EntityType="Self.Booking" />
           <EntitySet Name="Exkursion" EntityType="Self.Exkursion" />
           <EntitySet Name="Role" EntityType="Self.Role" />
@@ -239,7 +239,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище KursovikZooparkModelContainer" CdmEntityContainer="KursovikZooparkEntitiesq">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KursovikZooparkModelContainer" CdmEntityContainer="KursovikZooparkEntities3">
           <EntitySetMapping Name="Booking">
             <EntityTypeMapping TypeName="KursovikZooparkModel.Booking">
               <MappingFragment StoreEntitySet="Booking">

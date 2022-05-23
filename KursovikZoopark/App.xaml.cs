@@ -13,11 +13,11 @@ namespace KursovikZoopark
     /// </summary>
     public partial class App : Application
     {
-        public static KursovikZooparkEntitiesq Context;
+        public static KursovikZooparkEntities3 Context;
 
         void Application_Start(object sender, StartupEventArgs args)
         {
-            Context = new KursovikZooparkEntitiesq();
+            Context = new KursovikZooparkEntities3();
         }
     }
 }
