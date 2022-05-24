@@ -11,7 +11,7 @@
     <Grid Background="White" Loaded="Grid_Loaded">
         <DataGrid x:Name="listEx" IsReadOnly="True" MouseDoubleClick="SelectEx"  AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="listEx_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="100"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="150"/>
                 <DataGridTextColumn Header="Стоимость"  Binding="{Binding itog}" Width="100"/>
                 <DataGridTextColumn Header="Кол-во чел"  Binding="{Binding valueMan}" Width="120"/>
                 <DataGridTextColumn x:Name="dateCollum" Header="Дата"  Binding="{Binding dateTime, StringFormat=\{0:dd.MM.yy\}}" Width="100"/>

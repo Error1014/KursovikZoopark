@@ -51,17 +51,5 @@ namespace KursovikZoopark
                 }
             }
         }
-        private void NavClient(object sender, RoutedEventArgs e)
-        {
-            ClientWin CW = new ClientWin(null);
-            this.Close();
-            CW.Show();
-        }
-        private void NavStaff(object sender, RoutedEventArgs e)
-        {
-            AdminWin AW = new AdminWin();
-            this.Close();
-            AW.Show();
-        }
     }
 }

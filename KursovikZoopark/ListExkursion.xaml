@@ -11,11 +11,11 @@
     <Grid Background="White" Loaded="Grid_Loaded">
         <DataGrid x:Name="listEx" IsReadOnly="True" MouseDoubleClick="SelectEx" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="100"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding name}" Width="150"/>
                 <DataGridTextColumn Header="Цена"  Binding="{Binding price}" Width="100"/>
                 <DataGridTextColumn Header="Длительность"  Binding="{Binding duration}" Width="100"/>
-                <DataGridTextColumn Header="Максю.чел."  Binding="{Binding maxMan}" Width="100"/>
-                <DataGridTextColumn Header="Like"  Binding="{Binding isLike}" Width="100"/>
+                <DataGridTextColumn Header="Макс.чел."  Binding="{Binding maxMan}" Width="100"/>
+               
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

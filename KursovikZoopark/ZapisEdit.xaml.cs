@@ -20,11 +20,11 @@ namespace KursovikZoopark
     /// </summary>
     public partial class ZapisEdit : Page
     {
-        Exkursion selectEx;
-        public ZapisEdit(Exkursion Ex)
+        Booking selectBooking;
+        public ZapisEdit(Booking booking)
         {
             InitializeComponent();
-            selectEx = Ex;
+            selectBooking = booking;
         }
     }
 }
