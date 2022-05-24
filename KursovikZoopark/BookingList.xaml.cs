@@ -27,6 +27,7 @@ namespace KursovikZoopark
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
             var result = from B in App.Context.Booking.ToList()
+                         where (B.isEnd == false) ||(B.isEnd==null)
                          select B;
             
            
@@ -36,24 +37,8 @@ namespace KursovikZoopark
         private void SelectZapis(object sender, MouseButtonEventArgs e)
         {
             Booking SelectBooking = (listEx.SelectedItem as Booking);
-            ClientWin CW = (ClientWin)Window.GetWindow(this);
+            AdminWin CW = (AdminWin)Window.GetWindow(this);
             CW.MainFrame.Content = new ZapisEdit(SelectBooking);
-        }
-    }
-    public class Zapis
-    {
-        public string familia;
-        public string name;
-        public float itog;
-        public int valueMan;
-        public DateTime dateTime;
-        public Zapis(string familia, string name, float itog, int valueMan, DateTime dateTime)
-        {
-            this.familia = familia;
-            this.name = name;
-            this.itog = itog;
-            this.valueMan = valueMan;
-            this.dateTime = dateTime;
         }
     }
 }
