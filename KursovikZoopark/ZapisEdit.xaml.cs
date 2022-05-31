@@ -38,8 +38,12 @@ namespace KursovikZoopark
             exkurs = ex.Max(x => x);
             ExkursTextBlock.Text = exkurs.name;
             valueMaxTextBlock.Text = selectBooking.valueMan.ToString();
-            DateTimeTextBlock.Text = selectBooking.dateTime.ToString(); ;
-            ItogTextBlock.Text = selectBooking.itog.ToString()+" руб.";
+            DateTimeTextBlock.Text = selectBooking.dateTime.ToString();
+            double itog = selectBooking.itog.Value;
+            MessageBox.Show(itog.ToString());
+            itog = Math.Round(itog, 2);
+            MessageBox.Show(itog.ToString());
+            ItogTextBlock.Text = itog.ToString()+" руб.";
         }
 
         private void BuyExkurs(object sender, RoutedEventArgs e)
