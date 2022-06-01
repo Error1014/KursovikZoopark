@@ -12,8 +12,6 @@
             <TextBox x:Name="loginBox" Width="200" Canvas.Left="270" Canvas.Top="112" Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
             <PasswordBox x:Name="PassBox" Width="200" Canvas.Left="270" Canvas.Top="148" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
             <Button Width="100" Height="30" Canvas.Left="325" Canvas.Top="243" Content="Войти" Click="Whod"/>
-            <Button Canvas.Left="38" Canvas.Top="357" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Content="Клиент" Click="NavClient"/>
-            <Button Canvas.Left="203" Canvas.Top="357" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Content="Сотрудник" Click="NavStaff"/>
         </Canvas>
     </Grid>
 </Window>

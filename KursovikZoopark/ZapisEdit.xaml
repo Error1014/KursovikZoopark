@@ -5,10 +5,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KursovikZoopark"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Height="450" Width="600"
       Title="ZapisEdit">
 
     <Grid Background="White">
-            
+        <Canvas>
+            <TextBlock x:Name="FIOTextBlock" Width="500" Height="45" Canvas.Left="68" Canvas.Top="57" Text="Имя" FontSize="30"/>
+            <TextBlock x:Name="ExkursTextBlock" Width="500" Height="45" Canvas.Left="68" Canvas.Top="107" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Language="ru-ru" Text="Экскурсия"/></TextBlock>
+            <TextBlock x:Name="valueMaxTextBlock" Width="107" Height="45" Canvas.Left="68" Canvas.Top="157" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text="10 чел"/><Run Language="ru-ru" Text="."/></TextBlock>
+            <TextBlock x:Name="DateTimeTextBlock" Width="299" Height="45" Canvas.Left="68" Canvas.Top="207" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Language="ru-ru" Text="10.10.10"/></TextBlock>
+            <TextBlock x:Name="ItogTextBlock" Width="196" Height="45" TextAlignment="Right" Canvas.Left="372" Canvas.Top="207" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Text="10000"/>
+            <Button Width="200" Height="50" Canvas.Left="300" Canvas.Top="355" Content="Отметить" FontSize="30" Click="BuyExkurs"/>
+        </Canvas>
     </Grid>
 </Page>

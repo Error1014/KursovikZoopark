@@ -33,7 +33,7 @@ namespace KursovikZoopark
                          join B in App.Context.Booking on E.id equals B.idExkursion
                          //join U in App.Context.User on B.idUser equals U.id
                          where B.idUser == _client.id
-                         select new {E.name,B.itog,B.valueMan, B.dateTime};
+                         select new {E.name,B.itog,B.valueMan, B.dateTime, B.isEnd};
             listEx.DataContext = result;
         }
 
